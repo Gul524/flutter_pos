@@ -44,7 +44,7 @@ Widget ksizeh100 = const SizedBox(
   height: 100,
 );
 
-double kfnormalfont = 14;
-double kfsmallfont = 12;
-double kflargefont = 18;
-double kfxlargefont = 24;
+double kfnormalfont = 12;
+double kfsmallfont = 10;
+double kflargefont = 16;
+double kfxlargefont = 20;

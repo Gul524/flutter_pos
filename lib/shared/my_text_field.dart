@@ -20,36 +20,30 @@ class MyTextField extends StatelessWidget {
           label,
           style: TextStyle(
             fontSize: kfnormalfont,
-            color: AppColor.text,
+            color: AppColor.textOnSecondary,
           ),
         ),
         ksizeh4,
         TextField(
           style: TextStyle(
             fontSize: kfnormalfont,
-            color: AppColor.text,
+            color: AppColor.textOnTextfield,
           ),
-          cursorHeight: 15,
           controller: controller,
-          cursorColor: AppColor.text,
+          cursorColor: AppColor.primary,
           decoration: InputDecoration(
             hintText: label,
             hintStyle: TextStyle(
               fontSize: kfsmallfont,
-              color: AppColor.gray,
+              color: AppColor.hintColor,
             ),
-            contentPadding: const EdgeInsets.symmetric(
-              vertical: 7,
-              horizontal: 7,
-            ),
-            isCollapsed: true,
             isDense: true,
             filled: true,
-            fillColor: AppColor.textfieldin,
+            fillColor: AppColor.textFieldBG,
             border: OutlineInputBorder(),
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: AppColor.secondary,
+                color: AppColor.primaryDark,
                 width: 1.0,
               ),
             ),

@@ -3,6 +3,7 @@ import 'package:flutter_pos/configs/colors.dart';
 import 'package:flutter_pos/configs/sizes.dart';
 import 'package:flutter_pos/pages/home/homeController.dart';
 import 'package:flutter_pos/pages/home/side_bar_menu.dart';
+import 'package:flutter_pos/pages/tabs/dashboard/dashbord.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
@@ -24,42 +25,38 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColor.scaffoldBackgroundColor,
+        backgroundColor: AppColor.scaffoldBgColor,
         body: Row(
           children: [
             Container(
-              width: 250,
+              width: 220,
               margin: const EdgeInsets.all(8),
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: AppColor.sideBar,
+                gradient: LinearGradient(colors: [
+                  AppColor.primaryDark,
+                  AppColor.primaryLight,
+                ]),
                 borderRadius: BorderRadius.circular(5),
               ),
               child: sideBarMenu(
                 controller: controller,
+                onThemeChange: () {
+                  setState(() {});
+                },
               ),
             ),
             Expanded(
               child: Container(
                 margin: const EdgeInsets.all(8),
-                padding: const EdgeInsets.all(12),
+                padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: AppColor.scaffoldBackgroundColor,
+                  color: AppColor.scaffoldBgColor,
                   borderRadius: BorderRadius.circular(5),
                 ),
                 child: Column(
                   children: [
-                   
-                    ksizeh20,
-                    Obx(
-                      () => Text(
-                        controller.currentIndex.value.toString(),
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
+                    Obx(() => controller.tabs[controller.currentIndex.value]),
                   ],
                 ),
               ),

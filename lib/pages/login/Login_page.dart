@@ -11,14 +11,25 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColor.scaffoldBackgroundColor,
       body: Center(
         child: Container(
           width: 320,
           height: 320,
           padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
           decoration: BoxDecoration(
-            color: AppColor.primarylight,
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.black.withAlpha(50),
+                  offset: Offset(0, 2),
+                  blurRadius: 3,
+                  spreadRadius: 1),
+              BoxShadow(
+                  color: Colors.black.withAlpha(50),
+                  offset: Offset(0, -2),
+                  blurRadius: 3,
+                  spreadRadius: 1)
+            ],
+            color: Colors.white,
             borderRadius: BorderRadius.circular(10),
           ),
           child: Column(
@@ -29,17 +40,16 @@ class LoginPage extends StatelessWidget {
                 'Login',
                 style: TextStyle(
                     fontSize: kfxlargefont,
-                    color: AppColor.text,
+                    // color: AppColor.text,
                     fontWeight: FontWeight.bold),
               ),
               ksizeh20,
-             
               MyTextField(
                   controller: TextEditingController(), label: 'User Name'),
               MyTextField(
                   controller: TextEditingController(), label: 'Password'),
               ksizeh40,
-              commonButton(
+              commonButtonPrimary(
                 onPressed: () {
                   Get.toNamed("/home");
                 },
